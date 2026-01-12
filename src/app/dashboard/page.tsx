@@ -128,7 +128,7 @@ export default async function DashboardPage() {
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">
-              {deals.reduce((sum, deal) => sum + deal._count.participants, 0)}
+              {deals.reduce((sum: number, deal: any) => sum + deal._count.participants, 0)}
             </div>
             <p className="text-xs text-muted-foreground">
               Total across deals
@@ -155,7 +155,7 @@ export default async function DashboardPage() {
         </Card>
       ) : (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {deals.map((deal) => (
+          {deals.map((deal: any) => (
             <Link key={deal.id} href={`/dashboard/deals/${deal.id}`}>
               <Card className="transition-shadow hover:shadow-lg">
                 <CardHeader>

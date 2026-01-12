@@ -1,4 +1,4 @@
-import { getServerSession } from 'next/auth'
+import { getServerSession } from 'next-auth/next'
 import { authOptions } from '@/lib/auth'
 import { prisma } from '@/lib/prisma'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -172,7 +172,7 @@ export default async function AnalyticsPage() {
             </div>
           ) : (
             <div className="space-y-4">
-              {analytics.recentActivity.map((activity) => (
+              {analytics.recentActivity.map((activity: any) => (
                 <div
                   key={activity.id}
                   className="flex items-center justify-between border-b pb-4 last:border-0"

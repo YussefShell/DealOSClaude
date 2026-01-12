@@ -34,3 +34,7 @@ export function formatDateTime(date: Date | string) {
     minute: '2-digit',
   })
 }
+
+export function formatFileSize(bytes: number) {
+  return formatBytes(bytes)
+}

@@ -91,7 +91,7 @@ export async function POST(
       data: {
         documentId: document.id,
         extractionType: 'DOCUMENT_CLASSIFICATION',
-        extractedData: analysis,
+        extractedData: analysis as any,
         confidenceScore: analysis.confidenceScore,
         model: 'claude-3-5-sonnet-20241022',
       },
