@@ -29,6 +29,11 @@ export function useToast() {
 
 export function ToastProvider({ children }: { children: React.ReactNode }) {
   const [toasts, setToasts] = React.useState<Toast[]>([])
+  const [mounted, setMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const addToast = React.useCallback((toast: Omit<Toast, "id">) => {
     const id = Math.random().toString(36).substr(2, 9)
@@ -46,7 +51,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
   return (
     <ToastContext.Provider value={{ toasts, addToast, removeToast }}>
       {children}
-      <ToastContainer toasts={toasts} removeToast={removeToast} />
+      {mounted && <ToastContainer toasts={toasts} removeToast={removeToast} />}
     </ToastContext.Provider>
   )
 }
