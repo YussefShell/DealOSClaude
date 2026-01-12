@@ -86,7 +86,7 @@ A secure, multi-tenant SaaS platform for managing M&A transactions with AI-power
    Required variables:
    ```env
    DATABASE_URL="postgresql://user:password@localhost:5432/dealos"
-   NEXTAUTH_URL="http://localhost:3000"
+   NEXTAUTH_URL="http://localhost:3002"
    NEXTAUTH_SECRET="your-secret-here"
    ANTHROPIC_API_KEY="your-anthropic-key"
    ```
@@ -117,7 +117,7 @@ A secure, multi-tenant SaaS platform for managing M&A transactions with AI-power
 
 7. **Open the application**
 
-   Navigate to [http://localhost:3000](http://localhost:3000)
+   Navigate to [http://localhost:3002](http://localhost:3002)
 
 ### First Time Setup
 
